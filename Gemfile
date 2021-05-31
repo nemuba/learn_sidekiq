@@ -35,7 +35,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem 'mongoid', '~> 7.0.5'
+gem 'mongoid', '~> 7.0.0'
 gem 'sidekiq'
 gem 'sidekiq-batch'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'

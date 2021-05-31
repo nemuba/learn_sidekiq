@@ -3,11 +3,9 @@ require 'csv'
 namespace :generate_user do
   desc 'User - import 10_000 users'
   task :import => :environment do
-    file = './tmp/user_export_2021-05-29 23:08:34 -0300.csv'
+    users = get_users(10_000)
 
-    CSV.foreach(file, col_sep: ',', headers: false) do |user|
-      UserImportJob.perform_async(user[0], user[1])
-    end
+    ImportClusterJob.perform_async(users)
   end
 
   desc 'User - export'
